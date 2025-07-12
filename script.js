@@ -1,19 +1,17 @@
-document.getElementById('loginForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // Stop page from refreshing
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent form from submitting
 
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-  const correctUsername = "admin";
-  const correctPassword = "12345";
+  const message = document.getElementById("message");
 
-  const message = document.getElementById('message');
-
-  if (username === correctUsername && password === correctPassword) {
-    message.style.color = "green";
+  if (username === "admin" && password === "1234") {
     message.textContent = "Login successful!";
+    message.style.color = "green";
   } else {
+    message.textContent = "Invalid credentials.";
     message.style.color = "red";
-    message.textContent = "Invalid username or password.";
   }
 });
+
